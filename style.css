@@ -9,3 +9,7 @@ License: The MIT License (MIT)
 License URI: http://opensource.org/licenses/MIT
 Tags: one-column, two-column, full-width-template, custom menu
 */
+
+body{
+	background: #f2f2f2;
+}
