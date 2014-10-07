@@ -16,6 +16,13 @@ if ( ! isset( $content_width ) ) :
     $content_width = 600;
 endif;
 
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * To override starter_theme_setup() in a child theme, 
+ * add your own starter_theme_setup to your child theme's functions.php file.
+ */
+
 if ( ! function_exists( "starter_theme_setup" ) ):
     function starter_theme_setup() {
 
