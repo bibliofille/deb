@@ -1,4 +1,4 @@
-/*
+/*!
 Theme Name: Deb
 Theme URI: https://github.com/bibliofille/
 Author: Bibliofille Creative 
@@ -11,5 +11,42 @@ Tags: one-column, two-column, full-width-template, custom menu
 */
 
 body{
-	background: #f2f2f2;
+	background: #f3f3f3;
 }
+
+/* FONTS
+-------------------------- */
+/* Uncomment/use this file if you install any custom fonts
+ @import "fonts/all";*/
+
+/* RESET & BASE
+------------------ */
+@import "reset";
+@import "mixins";
+@import "base";
+
+/* =LAYOUTS
+------------------ */
+@import "layout";
+@import "header";
+@import "nav";
+@import "footer";
+
+/* =CONTENT
+------------------ */
+@import "typography";
+@import "forms";
+
+/* =COMPONENTS
+------------------ */
+/* Includes password protection for pages and posts, 404 page */
+@import "components";
+
+/* =PROJECT PAGES SPECIFIC
+------------------ */
+@import "content";
+@import "pages/all";
+
+/* =BLOG SPECIFIC
+------------------ */
+@import "blog/all";
