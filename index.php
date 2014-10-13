@@ -49,4 +49,39 @@ get_header(); ?>
 
 </section><!-- #primary -->
 
+<section id="primary" role="main">
+
+    <?php if ( have_posts() ) : ?>
+        <!-- there IS content for this query -->
+
+        <?php // check if we're on an archive page
+        if ( is_archive() ) :
+            // if so, print the archive title before the loop begins
+            get_template_part( 'inc/archive-header' );
+        endif; ?>
+
+        <?php /* Start the Loop */ ?>
+        <?php while ( have_posts() ) : the_post(); ?>
+
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <header class="entry-header">
+                    <h1><?php the_title(); ?></h1>
+                </header><!-- .entry-header -->
+
+                <?php the_content(); ?>
+
+            </article><!-- #post-<?php the_ID(); ?> -->
+
+        <?php endwhile; ?>
+
+        // Pagination would go here (arrows to next/previous page)
+
+    <?php else : ?>
+
+        <!-- No results found for this archive -->
+
+    <?php endif; ?>
+
+</section><!-- #primary -->
+
 <?php get_footer(); ?>
