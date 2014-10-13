@@ -6,7 +6,7 @@
  * custom template tags, actions and filter hooks to change core functionality.
  *
  *
- * @package Starter_Theme
+ * @package Deb
  */
  
 /**
@@ -19,15 +19,15 @@ endif;
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
- * To override starter_theme_setup() in a child theme, 
+ * To override deb_setup() in a child theme, 
  * add your own starter_theme_setup to your child theme's functions.php file.
  */
-if ( ! function_exists( 'starter_theme_setup' ) ):
-	function starter_theme_setup() {
+if ( ! function_exists( 'deb_setup' ) ):
+	function deb_setup() {
  
 		// Make theme available for translation.
 		// Translations can be filed in the /languages/ directory.
-		load_theme_textdomain( 'starter-theme', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'deb', get_template_directory() . '/languages' );
  
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -60,13 +60,13 @@ if ( ! function_exists( 'starter_theme_setup' ) ):
 		// Add custom image sizes
         	// add_image_size( &#039;name&#039;, 500, 300, true );
 	}
-endif; // starter_theme_setup
-add_action( 'after_setup_theme', 'starter_theme_setup' );
+endif; // deb_setup
+add_action( 'after_setup_theme', 'deb_setup' );
  
 /**
  * Register sidebars and widgetized areas
  */
-function starter_theme_widgets_init() {
+function deb_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Sidebar', 'starter-theme' ),
 		'id' => 'sidebar-1',
@@ -76,12 +76,12 @@ function starter_theme_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'starter_theme_widgets_init' );
+add_action( 'widgets_init', 'deb_widgets_init' );
  
 /**
  * Enqueue javascript files as needed
  */
-function starter_theme_scripts_method() {
+function deb_scripts_method() {
  
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -93,7 +93,7 @@ function starter_theme_scripts_method() {
 	//	array('jquery')
 	// );
 }    
-add_action('wp_enqueue_scripts', 'starter_theme_scripts_method');
+add_action('wp_enqueue_scripts', 'deb_scripts_method');
  
 /**
  * Remove the front-end admin bar for everybody, always
@@ -109,7 +109,7 @@ show_admin_bar( false );
 //
 //	return $buttons;
 //}
-//add_filter('mce_buttons_2', 'starter_theme_mce_buttons');
+//add_filter('mce_buttons_2', 'deb_mce_buttons');
  
 /**
  * Remove from TinyMCE all colors except those specified
@@ -120,3 +120,6 @@ show_admin_bar( false );
 //return $init;
 //}
 //add_filter('tiny_mce_before_init', 'starter_theme_change_mce_colors');
+
+// Comments & pingbacks display template
+include('inc/functions/comments.php');
