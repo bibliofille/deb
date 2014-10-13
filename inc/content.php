@@ -2,7 +2,7 @@
 /**
  * The default template for displaying content
  *
- * @package Starter_Theme
+ * @package Deb
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
