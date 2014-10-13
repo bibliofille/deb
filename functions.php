@@ -54,7 +54,7 @@ if ( ! function_exists( 'deb_setup' ) ):
  
 		// Enable support for editable menus via Appearance > Menus
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'starter-theme' ),
+			'primary' => __( 'Primary Menu', 'deb' ),
 		) );
 		
 		// Add custom image sizes
