@@ -68,13 +68,22 @@ add_action( 'after_setup_theme', 'deb_setup' );
  */
 function deb_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Sidebar', 'starter-theme' ),
+		'name' => __( 'Sidebar', 'deb' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+	 register_sidebar( array(
+        'name' => __( 'Footer Widget Area', 'deb' ),
+        'id' => 'footer-area',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<span style="display:none;">',
+        'after_title' => '</span>',
+    ) );
 }
 add_action( 'widgets_init', 'deb_widgets_init' );
  
