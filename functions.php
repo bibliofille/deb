@@ -132,3 +132,6 @@ show_admin_bar( false );
 
 // Comments & pingbacks display template
 include('inc/functions/comments.php');
+
+// include custom widget file
+include_once( 'inc/widget.php' );
